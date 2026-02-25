@@ -4,105 +4,86 @@ import { reactive } from "vue";
 export const store = reactive({
   products: [
     {
-      name:
+      name: "IVE",
       url: ,
       price: 
     },
     {
-      name:
+      name: ILLIT,
       url:
       price: 
     },
     {
-      name:
-      url:
-      price: 
+      name: izna
+      url: ,
+      price: ,
     },
     {
-      name: 
+      name: Hearts2Hearts
       url: 
       price: 
     },
     {
-      name: 
+      name: NewJeans
       url: 
       price: 
     },
     {
-      name: 
+      name: TWICE 
       url: 
       price: 
     },
     {
-      name: 
+      name: ITZY
       url: 
       price:
     },
     {
-      name: 
+      name: MEOVV
       url: 
       price: 
     },
     {
-      name: 
+      name: BABYMONSTER
       url: 
       price:
     },
     {
-      name: 
+      name: fromis_9
       url:
       price: 
     },
     {
-      name: 
+      name: i-dle
       url: 
       price: 
     },
     {
-      name: 
+      name: LESSERAFIM"
       url: 
       price: 
     },
     {
-      name: 
+      name: tripleS
       url: 
       price: 
     },
     {
-      name: 
+      name: KiiKii
       url:
       price: 
     },
     {
-      name:
+      name: aespa
       url: 
       price: 
     },
     {
-      name:
+      name: +
       url:
       price: 
     },
-    {
-      name:
-      url:
-      price: 
-    },
-    {
-      name: 
-      url: 
-      price: 
-    },
-    {
-      name: 
-      url: 
-      price: 
-    },
-    {
-      name: 
-      url: 
-      price: 
-    },
+ 
   ],
   cart: [],
   total: 0,
