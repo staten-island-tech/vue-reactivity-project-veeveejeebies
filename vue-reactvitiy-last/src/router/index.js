@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// Change this line to point to the actual file in your sidebar
+
 import albums from '@/App.vue' 
 
 const router = createRouter({
