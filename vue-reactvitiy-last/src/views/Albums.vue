@@ -2,20 +2,62 @@
   <button @click="toggle">
     {{ awesome ? 'Show More' : 'Show Less' }}
   </button>
+    <input :value="text" @input="onInput" placeholder="Type here">
+    <p>{{ text }}</p>
 
+
+
+
+    <p>Todo id: {{ kpoop }}</p>
+  <button @click="kpoop++" :disabled="!purchase">Add to Cart</button>
+  <p v-if="!purchase">Loading...</p>
+  <pre v-else>{{ purchase }}</pre>
   
-  <div v-if="!awesome">
+
+
+
+
+  <div class = "album" v-if="!awesome">
     <div v-for="album in albums" :key="album.name" class="album-card">
       <img :src="album.img" :alt="album.alt">
       <h3>{{ album.name }}</h3>
       <p>${{ album.price }}</p>
+      
     </div>
   </div>
 </template>
 
+
+
+
 <script setup>
- import { ref } from 'vue'
- 
+import { ref, watch } from 'vue'
+
+const kpoop = ref(1)
+const purchase = ref(null)
+
+
+
+async function fetchData() {
+  purchase.value = null
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${kpoop.value}`
+  )
+  purchase.value = await res.json()
+}
+
+fetchData()
+
+watch(todoId, fetchData)
+
+
+
+
+
+
+
+
+
 const awesome = ref(true)
 
 const toggle = () => {
@@ -125,5 +167,31 @@ const albums = [
 </script>
 
 <style  scoped>
+  div {
+  padding: 16px;
+}
 
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.container {
+  display: flex;
+  width: 80vw;
+  margin: 20px auto;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.album {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 </style>
