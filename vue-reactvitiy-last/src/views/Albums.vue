@@ -19,7 +19,7 @@
         <h2>Total: ${{ totalPrice().toFixed(2) }}</h2>
         <div v-if="showKpopCart">
           <div v-if="cart.length === 0">
-            Cart is empty
+            Add some items!
           </div>
 
           <div v-for="item in cart" :key="item.name" class="cart-item">
@@ -200,6 +200,9 @@ const albums = [
 }
 
 .shop-title {
+  color:#b97fe9;
+    font-family: "Cherry Bomb One", system-ui;
+  font-size: 25px;
   text-align: center;
   font-size: 40px;
   margin-bottom: 30px;
@@ -218,6 +221,7 @@ const albums = [
   padding: 20px;
     font-family: "Cherry Bomb One", system-ui;
   font-size: 13px;
+  
 }
 
 .cart-buttons {
@@ -240,7 +244,7 @@ const albums = [
 .card {
     font-family: "Cherry Bomb One", system-ui;
   font-size: 25px;
-  
+  color:#0c0124;
   width: 200px;
   border: 3px solid #deb5ff;
   border-radius: 15px;
@@ -267,5 +271,9 @@ button {
   font-family: "Cherry Bomb One", system-ui;
   font-size: 13px;
   border-radius: 10px;
+  
+}
+button:hover {
+  background-color: #929292;
 }
 </style>
